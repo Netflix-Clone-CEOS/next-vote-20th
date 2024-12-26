@@ -10,6 +10,8 @@ export const button = style({
 
   borderRadius: "20px",
 
-  width: "43rem",
-  height: "82rem",
+  width: "30rem",
+  height: "8.2rem",
+
+  fontSize: "3rem",
 });
