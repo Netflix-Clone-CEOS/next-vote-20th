@@ -4,9 +4,9 @@ export const teams = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  stroke: "#384084",
+  border: "3px solid #384084",
 
-  width: "88rem",
+  width: "80rem",
   height: "8.5rem",
   strokeWidth: "0.3rem",
   color: "white",
@@ -20,4 +20,15 @@ export const rank = style({
   alignItems: "center",
   backgroundColor: "#384084",
   color: "white",
+
+  width: "8.5rem",
+  height: "5.8rem",
+
+  borderRadius: "10px",
+
+  fontSize: "3rem",
+});
+
+export const teamname = style({
+  fontSize: "4rem",
 });

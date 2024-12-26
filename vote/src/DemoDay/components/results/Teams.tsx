@@ -1,4 +1,4 @@
-import { rank, teams } from "@/DemoDay/styles/results/teams.css";
+import { rank, teams, teamname } from "@/DemoDay/styles/results/teams.css";
 
 interface TeamsProp {
   ranking: number;
@@ -9,9 +9,10 @@ export default function Teams(props: TeamsProp) {
   const { ranking, teamName, teamSummary } = props;
   return (
     <div className={teams}>
-      <span className={rank}>{ranking}</span>
-      <p>{teamName}</p>
+      <div className={rank}>{ranking}</div>
+      <p className={teamname}>{teamName}</p>
       <p>{teamSummary}</p>
+      <p>{ranking}</p>
     </div>
   );
 }
