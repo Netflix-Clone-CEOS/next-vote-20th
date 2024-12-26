@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Providers from "./Providers";
 import "../styles/global.css";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "안뇽안뇽뇽",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
+        <Header />
         <Providers>{children}</Providers>
       </body>
     </html>
