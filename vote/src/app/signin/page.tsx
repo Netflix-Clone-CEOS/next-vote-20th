@@ -1,5 +1,4 @@
-import React from "react";
-import SigninInputs from "../../SigninLogin/components/SigninInputs";
+import SigninInputs from "./components/SigninInputs";
 
 export default function page() {
   return (

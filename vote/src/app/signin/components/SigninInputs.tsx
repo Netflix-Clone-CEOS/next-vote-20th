@@ -1,18 +1,18 @@
-import { SIGN_IN } from "../core/signin";
-import { container } from "../styles/container.css";
-import Button from "./Button";
-import InputSignin from "./InputSignin";
+import { SIGN_IN } from "../../../SigninLogin/core/signin";
+import { container } from "../../../SigninLogin/styles/container.css";
+import Button from "../../../SigninLogin/components/Button";
+import Input from "../../../SigninLogin/components/Input";
 
 export default function SigninInputs() {
   return (
     <div className={container}>
       {SIGN_IN.map((item) => {
         if (item != "이메일주소") {
-          return <InputSignin key={item} title={item} />;
+          return <Input key={item} title={item} />;
         } else {
           return (
             <>
-              <InputSignin title={item} /> <Button text="인증" />
+              <Input title={item} /> <Button text="인증" />
             </>
           );
         }
