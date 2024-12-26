@@ -23,3 +23,13 @@ export const buttonVariants = styleVariants({
     border: "1px solid white",
   },
 });
+
+export const buttons = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  gap: "2rem",
+
+  width: "fit-content",
+});
