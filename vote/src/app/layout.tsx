@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Providers from "./Providers";
+import "../styles/global.css";
 
 export const metadata: Metadata = {
   title: "안뇽안뇽뇽",
