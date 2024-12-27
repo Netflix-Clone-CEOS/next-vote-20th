@@ -2,14 +2,14 @@ import { style } from "@vanilla-extract/css";
 
 export const teams = style({
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "space-around",
   alignItems: "center",
   border: "3px solid #384084",
 
-  width: "80rem",
+  width: "50rem",
   height: "8.5rem",
   strokeWidth: "0.3rem",
-  color: "white",
+  color: "black",
   gap: "3rem",
   borderRadius: "20px",
 });
@@ -31,4 +31,13 @@ export const rank = style({
 
 export const teamname = style({
   fontSize: "4rem",
+});
+
+export const teamsummary = style({
+  fontSize: "2rem",
+});
+
+export const voted = style({
+  fontSize: "4rem",
+  color: "#384084",
 });

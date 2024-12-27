@@ -7,15 +7,7 @@ export default function SigninInputs() {
   return (
     <div className={container}>
       {SIGN_IN.map((item) => {
-        if (item != "이메일주소") {
-          return <Input key={item} title={item} />;
-        } else {
-          return (
-            <>
-              <Input title={item} /> <Button text="인증" />
-            </>
-          );
-        }
+        return <Input key={item} title={item} />;
       })}
       <div>
         <Button text="소속 팀명" />

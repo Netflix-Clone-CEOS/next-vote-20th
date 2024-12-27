@@ -1,3 +1,4 @@
+import { pretendardSemi } from "@/styles/font.css";
 import { style } from "@vanilla-extract/css";
 
 export const teams = style({
@@ -18,6 +19,7 @@ export const teams = style({
 export const teamNameStyle = style({
   fontSize: "4.8rem",
   color: "black",
+  fontFamily: pretendardSemi,
 });
 
 export const teamSummaryStyle = style({
