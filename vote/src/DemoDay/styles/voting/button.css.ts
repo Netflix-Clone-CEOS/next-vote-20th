@@ -16,7 +16,7 @@ export const button = style({
 });
 
 export const buttonVariants = styleVariants({
-  vote: {
+  voting: {
     backgroundColor: "#384084",
   },
   result: {
