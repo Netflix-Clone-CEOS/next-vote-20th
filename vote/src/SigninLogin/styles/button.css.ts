@@ -9,4 +9,15 @@ export const button = style({
   color: "white",
 
   borderRadius: "10px",
+
+  fontSize: "2rem",
+  width: "20rem",
+  height: "6rem",
+});
+
+export const buttoncontainer = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "2rem",
 });
