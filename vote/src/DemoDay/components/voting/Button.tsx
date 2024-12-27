@@ -1,5 +1,12 @@
-import { button } from "@/DemoDay/styles/voting/button.css";
+import { button, buttonVariants } from "@/DemoDay/styles/voting/button.css";
 
-export default function Button({ text }: { text: string }) {
-  return <button className={button}>{text}</button>;
+type ButtonProps = {
+  variant: "voting" | "result";
+  text: string;
+};
+
+export default function Button({ text, variant }: ButtonProps) {
+  return (
+    <button className={`${button} ${buttonVariants[variant]}`}>{text}</button>
+  );
 }

@@ -1,11 +1,10 @@
-import { style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
 
 export const button = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
 
-  backgroundColor: "#384084",
   color: "white",
 
   borderRadius: "20px",
@@ -14,4 +13,13 @@ export const button = style({
   height: "8.2rem",
 
   fontSize: "3rem",
+});
+
+export const buttonVariants = styleVariants({
+  vote: {
+    backgroundColor: "#384084",
+  },
+  result: {
+    backgroundColor: "rgba(56,64,132,0.5)",
+  },
 });

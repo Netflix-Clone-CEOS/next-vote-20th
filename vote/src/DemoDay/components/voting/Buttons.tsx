@@ -8,7 +8,11 @@ export default function Buttons() {
   return (
     <div className={buttonContainerstyle}>
       {BUTTON_LIST.map((text) => {
-        return <Button key={text} text={text} />;
+        if (text == "투표하기") {
+          return <Button variant="voting" key={text} text={text} />;
+        } else {
+          return <Button variant="result" key={text} text={text} />;
+        }
       })}
     </div>
   );
