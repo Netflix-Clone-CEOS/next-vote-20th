@@ -5,13 +5,13 @@ import { pretendardSemiBold } from "@/styles/font.css";
 import React from "react";
 
 
-export default function Home() {
+export default function page() {
   return (
       <div className={pageStyle}>
-        <p className={`${title} ${pretendardSemiBold}`}>파트장/데모데이 투표</p>
+        <p className={`${title} ${pretendardSemiBold}`}>파트장 투표</p>
         <div className={voteTypeContainerStyle}>
-          <VoteType title='파트장 투표 바로가기' route="/partleadvote"/>
-          <VoteType title='데모데이 투표 바로가기' route="/demovote"/>
+          <VoteType title='FRONT-END 파트장 투표' />
+          <VoteType title='BACK-END 파트장 투표'/>
         </div>
       </div>
     );

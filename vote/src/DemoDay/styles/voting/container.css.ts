@@ -10,6 +10,16 @@ export const containerStyle = style({
   gap: "2.7rem",
 });
 
+export const voteTypeContainerStyle = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  flexWrap: "wrap",
+
+  gap: "10rem",
+});
+
 export const pageStyle = style({
   display: "flex",
   justifyContent: "center",
