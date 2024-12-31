@@ -17,7 +17,18 @@ export const voteTypeContainerStyle = style({
 
   flexWrap: "wrap",
 
-  gap: "10rem",
+  gap: "16.5rem",
+});
+
+export const voteTypeWrapper = style({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+
+  flexWrap: "wrap",
+
+  gap: "4.44rem",
 });
 
 export const pageStyle = style({

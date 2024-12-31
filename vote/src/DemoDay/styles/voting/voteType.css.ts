@@ -6,14 +6,13 @@ export const voteType = style({
   justifyContent: "center",
   alignItems: "center",
   border: "3px solid #384084",
-  padding: "7.62rem 3.5rem",
+  padding: "12.5rem 5.7rem",
   boxSizing: "border-box",
   color: "white",
   borderRadius: "20px",
-  width: "24.625rem",
-  height: "25.375rem",
+  width: "40.631rem",
+  height: "41.869rem",
   textAlign: "center",
-  flexDirection: "column",
   cursor: "pointer",
   transition: "transform 0.3s ease, background-color 0.3s ease",
 
@@ -26,9 +25,10 @@ export const voteType = style({
 });
 
 export const titleStyle = style({
-  fontSize: "3rem",
+  fontSize: "4.95rem",
   color: "#242957",
   fontFamily: pretendardSemi,
+  whiteSpace: "pre-line",
   selectors: {
     [`${voteType}:hover &`]: {
       color: "#FFFFFF",
