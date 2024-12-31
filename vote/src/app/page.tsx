@@ -1,5 +1,5 @@
 import VoteType from '@/DemoDay/components/voting/VoteType';
-import { pageStyle, containerStyle, voteTypeContainerStyle } from "@/DemoDay/styles/voting/container.css";
+import { pageStyle, voteTypeContainerStyle } from "@/DemoDay/styles/voting/container.css";
 import { title } from "@/DemoDay/styles/text.css";
 import { pretendardSemiBold } from "@/styles/font.css";
 import React from "react";

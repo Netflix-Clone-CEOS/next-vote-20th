@@ -11,11 +11,11 @@ export default function page() {
         <p className={`${title} ${pretendardSemiBold}`}>파트장 투표</p>
         <div className={voteTypeContainerStyle}>
         <div className={voteTypeWrapper}>
-          <VoteType title='FRONT-END 파트장 투표' />
+          <VoteType title='FRONT-END 파트장 투표' route="/feleadvote" />
           <Button variant="result" key="결과보기" text="결과보기"/>
         </div>
         <div className={voteTypeWrapper}>
-          <VoteType title='BACK-END 파트장 투표'/>
+          <VoteType title='BACK-END 파트장 투표' route="/beleadvote"/>
           <Button variant="result" key="결과보기" text="결과보기"/>
         </div>
         </div>
