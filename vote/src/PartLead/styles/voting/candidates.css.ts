@@ -15,6 +15,7 @@ export const candidates = style({
   boxSizing: "border-box",
 
   flexDirection: "column",
+  cursor: "pointer",
 });
 
 export const nameStyle = style({

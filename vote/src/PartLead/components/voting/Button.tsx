@@ -1,4 +1,4 @@
-import { button, buttonVariants } from "@/DemoDay/styles/voting/button.css";
+import { button, buttonVariants } from "@/PartLead/styles/voting/button.css";
 
 type ButtonProps = {
   variant: "voting" | "result";
