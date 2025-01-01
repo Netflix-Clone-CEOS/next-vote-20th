@@ -1,13 +1,15 @@
-import { FRONT_LIST } from "@/PartLead/core/frontlist";
 import React from "react";
 import Candidate from "./Candidate";
 import { result, resultColumn } from "@/PartLead/styles/results/results.css";
 
-export default function Results() {
-  
-  const columnCount = Math.ceil(FRONT_LIST.length / 2);
-  const column1 = FRONT_LIST.slice(0, columnCount);
-  const column2 = FRONT_LIST.slice(columnCount);
+interface ResultsProps {
+  leadList: { team: string; name: string }[];
+}
+
+export default function Results({ leadList }: ResultsProps) {
+  const columnCount = Math.ceil(leadList.length / 2);
+  const column1 = leadList.slice(0, columnCount);
+  const column2 = leadList.slice(columnCount);
 
   return (
     <div className={result}>
