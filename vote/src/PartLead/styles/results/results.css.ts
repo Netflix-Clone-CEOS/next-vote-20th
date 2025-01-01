@@ -3,8 +3,14 @@ import { style } from "@vanilla-extract/css";
 export const result = style({
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: "flex-start",
+  flexWrap: "wrap",
+  gap: "3rem",
+  width: "80%",
+});
 
+export const resultColumn = style({
+  display: "flex",
   flexDirection: "column",
   gap: "3rem",
 });

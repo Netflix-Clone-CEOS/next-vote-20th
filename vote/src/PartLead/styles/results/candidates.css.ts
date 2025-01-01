@@ -1,10 +1,12 @@
 import { style } from "@vanilla-extract/css";
 
-export const teams = style({
+export const candidate = style({
   display: "flex",
   justifyContent: "space-around",
   alignItems: "center",
   border: "3px solid #384084",
+  padding: "0rem 2rem",
+  boxSizing: "border-box",
 
   width: "50rem",
   height: "8.5rem",
@@ -29,11 +31,13 @@ export const rank = style({
   fontSize: "3rem",
 });
 
-export const teamname = style({
+export const candidateName = style({
   fontSize: "4rem",
+  width: "15rem",
+  textAlign: "left",
 });
 
-export const teamsummary = style({
+export const teamName = style({
   fontSize: "2rem",
 });
 

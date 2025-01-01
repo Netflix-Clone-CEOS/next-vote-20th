@@ -1,22 +1,39 @@
-import { TEAM_LIST } from "@/DemoDay/core/teamlist";
+import { FRONT_LIST } from "@/PartLead/core/frontlist";
 import React from "react";
-import Teams from "./Teams";
-import { result } from "@/DemoDay/styles/results/results.css";
+import Candidate from "./Candidate";
+import { result, resultColumn } from "@/PartLead/styles/results/results.css";
 
 export default function Results() {
+  
+  const columnCount = Math.ceil(FRONT_LIST.length / 2);
+  const column1 = FRONT_LIST.slice(0, columnCount);
+  const column2 = FRONT_LIST.slice(columnCount);
+
   return (
     <div className={result}>
-      {TEAM_LIST.map((team, index) => {
-        const { name, summary } = team;
-        return (
-          <Teams
+      {/* 첫 번째 열 */}
+      <div className={resultColumn}>
+        {column1.map((candidate, index) => (
+          <Candidate
             key={index}
-            ranking={index}
-            teamName={name}
-            teamSummary={summary}
+            ranking={index + 1}
+            team={candidate.team}
+            name={candidate.name}
           />
-        );
-      })}
+        ))}
+      </div>
+
+      {/* 두 번째 열 */}
+      <div className={resultColumn}>
+        {column2.map((candidate, index) => (
+          <Candidate
+            key={index + columnCount}
+            ranking={index + columnCount + 1}
+            team={candidate.team}
+            name={candidate.name}
+          />
+        ))}
+      </div>
     </div>
   );
 }
