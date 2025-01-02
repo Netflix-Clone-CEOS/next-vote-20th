@@ -1,3 +1,18 @@
+import VoteType from '@/DemoDay/components/voting/VoteType';
+import { pageStyle, voteTypeContainerStyle } from "@/DemoDay/styles/voting/container.css";
+import { title } from "@/DemoDay/styles/text.css";
+import { pretendardSemiBold } from "@/styles/font.css";
+import React from "react";
+
+
 export default function Home() {
-  return <div>홈스윗홈 </div>;
+  return (
+      <div className={pageStyle}>
+        <p className={`${title} ${pretendardSemiBold}`}>파트장/데모데이 투표</p>
+        <div className={voteTypeContainerStyle}>
+          <VoteType title='파트장 투표 바로가기' route="/partleadvote"/>
+          <VoteType title='데모데이 투표 바로가기' route="/demovote"/>
+        </div>
+      </div>
+    );
 }
