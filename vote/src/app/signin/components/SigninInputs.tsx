@@ -1,5 +1,4 @@
 "use client";
-import { SIGN_IN } from "../../../SigninLogin/core/signin";
 import { container } from "../../../SigninLogin/styles/container.css";
 import Button from "../../../SigninLogin/components/Button";
 import Input from "../../../SigninLogin/components/Input";
@@ -11,16 +10,33 @@ import { TEAM_NAME } from "@/SigninLogin/core/team";
 import ButtonContent from "@/SigninLogin/components/ButtonContent";
 import { PART_LIST } from "@/SigninLogin/core/part";
 
-const initalState = {
+interface State {
+  nameValue: string;
+  idValue: string;
+  pwValue: string;
+  pwcheckValue: string;
+  teamValue: string;
+  partValue: string;
+}
+
+type Action =
+  | { type: "SET_NAME"; payload: string }
+  | { type: "SET_ID"; payload: string }
+  | { type: "SET_PW"; payload: string }
+  | { type: "SET_PW_CHECK"; payload: string }
+  | { type: "SET_TEAM"; payload: string }
+  | { type: "SET_PART"; payload: string };
+
+const initalState: State = {
   nameValue: "",
   idValue: "",
   pwValue: "",
-  emailValue: "",
+  pwcheckValue: "",
   teamValue: "",
   partValue: "",
 };
 
-const reducer = (state, action) => {
+const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case "SET_NAME": {
       return { ...state, nameValue: action.payload };
@@ -55,6 +71,16 @@ export default function SigninInputs() {
     },
   });
 
+  const handleSignUp = () => {
+    mutation.mutate({
+      name: state.nameValue,
+      userId: state.idValue,
+      password: state.pwValue,
+      team: state.teamValue,
+      part: state.partValue,
+    });
+  };
+
   //원래 map으로 돌렸는데 오히려 가독성이 떨어지는 것 같아(머머있었는지 내가 모름,,이슈,,) map 풀어버렸습니덜덜
   return (
     <div className={container}>
@@ -87,19 +113,31 @@ export default function SigninInputs() {
           <Button text="소속 팀명" onClick={() => setIsTeam(!isTeam)} />
           {isTeam &&
             TEAM_NAME.map((value) => {
-              return <ButtonContent value={value} key={value} />;
+              return (
+                <ButtonContent
+                  onClick={() => dispatch({ type: "SET_TEAM", payload: value })}
+                  value={value}
+                  key={value}
+                />
+              );
             })}
         </div>
         <div>
           <Button text="소속 파트" onClick={() => setIsPart(!isPart)} />
           {isPart &&
             PART_LIST.map((value) => {
-              return <ButtonContent value={value} key={value} />;
+              return (
+                <ButtonContent
+                  onClick={() => dispatch({ type: "SET_PART", payload: value })}
+                  value={value}
+                  key={value}
+                />
+              );
             })}
         </div>
       </div>
       <div>
-        <Button text="가입하기" />
+        <Button onClick={handleSignUp} text="가입하기" />
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ export const signin = async (data: {
   name: string;
   userId: string;
   password: string;
-  email: string;
   team: string;
   part: string;
 }) => {
