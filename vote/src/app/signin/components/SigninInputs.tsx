@@ -4,9 +4,12 @@ import { container } from "../../../SigninLogin/styles/container.css";
 import Button from "../../../SigninLogin/components/Button";
 import Input from "../../../SigninLogin/components/Input";
 import { buttoncontainer } from "@/SigninLogin/styles/button.css";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { signin } from "@/SigninLogin/api/Signin";
+import { TEAM_NAME } from "@/SigninLogin/core/team";
+import ButtonContent from "@/SigninLogin/components/ButtonContent";
+import { PART_LIST } from "@/SigninLogin/core/part";
 
 const initalState = {
   nameValue: "",
@@ -39,6 +42,8 @@ const reducer = (state, action) => {
 
 export default function SigninInputs() {
   const [state, dispatch] = useReducer(reducer, initalState);
+  const [isTeam, setIsTeam] = useState(false);
+  const [isPart, setIsPart] = useState(false);
 
   const mutation = useMutation({
     mutationFn: signin,
@@ -78,8 +83,20 @@ export default function SigninInputs() {
         }
       />
       <div className={buttoncontainer}>
-        <Button text="소속 팀명" />
-        <Button text="소속 파트" />
+        <div>
+          <Button text="소속 팀명" onClick={() => setIsTeam(!isTeam)} />
+          {isTeam &&
+            TEAM_NAME.map((value) => {
+              return <ButtonContent value={value} key={value} />;
+            })}
+        </div>
+        <div>
+          <Button text="소속 파트" onClick={() => setIsPart(!isPart)} />
+          {isPart &&
+            PART_LIST.map((value) => {
+              return <ButtonContent value={value} key={value} />;
+            })}
+        </div>
       </div>
       <div>
         <Button text="가입하기" />

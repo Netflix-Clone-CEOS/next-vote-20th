@@ -21,3 +21,13 @@ export const buttoncontainer = style({
   alignItems: "center",
   gap: "2rem",
 });
+
+export const button_content = style({
+  color: "black",
+  fontSize: "2rem",
+  cursor: "pointer",
+
+  ":hover": {
+    color: "#384084",
+  },
+});

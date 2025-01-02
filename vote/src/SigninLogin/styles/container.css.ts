@@ -10,7 +10,6 @@ export const container = style({
   gap: "3rem",
 
   width: "78rem",
-  height: "80rem",
 
   backgroundColor: "white",
 
