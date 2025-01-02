@@ -9,6 +9,7 @@ import { signin } from "@/SigninLogin/api/Signin";
 import { TEAM_NAME } from "@/SigninLogin/core/team";
 import ButtonContent from "@/SigninLogin/components/ButtonContent";
 import { PART_LIST } from "@/SigninLogin/core/part";
+import { redirect } from "next/navigation";
 
 interface State {
   nameValue: string;
@@ -65,6 +66,7 @@ export default function SigninInputs() {
     mutationFn: signin,
     onSuccess: async () => {
       console.log("성공");
+      redirect("/login");
     },
     onError: (error) => {
       console.error(error);
