@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "./Button";
 import { buttons } from "@/styles/headerBtn.css";
 
@@ -8,9 +9,13 @@ export default function Buttons() {
     <div className={buttons}>
       {BUTTON_LIST.map((text) =>
         text === "로그인" ? (
-          <Button variant="login" key={text} text={text} />
+          <Link key={text} href="/login">
+            <Button variant="login" text={text} />
+          </Link>
         ) : (
-          <Button variant="signin" key={text} text={text} />
+          <Link key={text} href="/signin">
+            <Button variant="signin" key={text} text={text} />
+          </Link>
         )
       )}
     </div>
