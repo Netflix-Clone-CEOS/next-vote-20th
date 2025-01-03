@@ -9,8 +9,7 @@ import { signin } from "@/SigninLogin/api/Signin";
 import { TEAM_NAME } from "@/SigninLogin/core/team";
 import ButtonContent from "@/SigninLogin/components/ButtonContent";
 import { PART_LIST } from "@/SigninLogin/core/part";
-import { redirect } from "next/navigation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface State {
   nameValue: string;

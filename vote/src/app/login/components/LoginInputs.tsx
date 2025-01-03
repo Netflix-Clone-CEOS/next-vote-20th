@@ -4,7 +4,7 @@ import Button from "@/SigninLogin/components/Button";
 import Input from "@/SigninLogin/components/Input";
 import { container } from "@/SigninLogin/styles/container.css";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function LoginInputs() {
