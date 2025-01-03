@@ -6,7 +6,6 @@ export const teams = style({
   justifyContent: "center",
   alignItems: "center",
   border: "3px solid #384084",
-  color: "white",
   gap: "2.6rem",
   borderRadius: "20px",
 
@@ -14,6 +13,13 @@ export const teams = style({
   height: "14.5rem",
 
   flexDirection: "column",
+
+  cursor: "pointer",
+
+  ":hover": {
+    backgroundColor: "#384084",
+    color: "white",
+  },
 });
 
 export const teamNameStyle = style({

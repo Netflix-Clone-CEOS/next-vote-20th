@@ -5,8 +5,7 @@ export const teamlist = async () => {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_BASE_URL}api/vote/team`
     );
-    console.log("Response:", response.data);
-    return response.data;
+    return response.data.result;
   } catch (error) {
     console.error(error);
   }
