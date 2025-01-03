@@ -9,7 +9,7 @@ export const signin = async (data: {
 }) => {
   try {
     const response = await axios.post(
-      `${process.env.BASE_URL}/api/auth/signup`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}api/auth/signup`,
       data
     );
     return response.data;
