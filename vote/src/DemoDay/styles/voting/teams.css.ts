@@ -22,6 +22,24 @@ export const teams = style({
   },
 });
 
+export const clicked_teams = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  border: "3px solid #384084",
+  gap: "2.6rem",
+  borderRadius: "20px",
+
+  width: "38rem",
+  height: "14.5rem",
+
+  flexDirection: "column",
+
+  cursor: "pointer",
+  backgroundColor: "#384084",
+  color: "#ffffff",
+});
+
 export const teamNameStyle = style({
   fontSize: "4.8rem",
   color: "black",

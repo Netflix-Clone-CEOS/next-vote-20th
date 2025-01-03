@@ -1,9 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Teams from "./Teams";
 import { containerStyle } from "@/DemoDay/styles/voting/container.css";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { teamlist } from "@/DemoDay/api/teamlist";
+import Buttons from "./Buttons";
+import { teamvote } from "@/DemoDay/api/teamvote";
+import { useRouter } from "next/navigation";
 
 interface Team {
   teamId: number;
@@ -16,7 +19,29 @@ export default function Container() {
     queryKey: ["teams"],
     queryFn: teamlist,
   });
-  console.log(data);
+
+  const router = useRouter();
+  const [clickedTeam, setClickedTeam] = useState(0);
+
+  function handleClickTeam(teamId: number) {
+    setClickedTeam(teamId);
+  }
+
+  const mutation = useMutation({
+    mutationFn: teamvote,
+    onSuccess: async () => {
+      console.log("성공");
+      router.push("/demoresult");
+    },
+    onError: (error) => {
+      console.error(error);
+    },
+  });
+
+  function handleVoteTeam(teamId: number) {
+    mutation.mutate({ teamId });
+  }
+
   return (
     <div className={containerStyle}>
       {isLoading && <p>loading...</p>}
@@ -24,9 +49,17 @@ export default function Container() {
       {data?.map((team) => {
         const { teamName, description, teamId } = team;
         return (
-          <Teams key={teamId} teamName={teamName} teamSummary={description} />
+          <Teams
+            clickedTeam={clickedTeam}
+            handleClickTeam={handleClickTeam}
+            key={teamId}
+            teamId={teamId}
+            teamName={teamName}
+            teamSummary={description}
+          />
         );
       })}
+      <Buttons onClick={() => handleVoteTeam(clickedTeam)} />
     </div>
   );
 }

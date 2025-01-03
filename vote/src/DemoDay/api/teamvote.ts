@@ -1,10 +1,25 @@
-import axios from "axios";
+"use server";
 
-export const teamvote = async (data: { userId: string; password: string }) => {
+import axios from "axios";
+import { cookies } from "next/headers";
+
+export const teamvote = async ({ teamId }: { teamId: number }) => {
   try {
+    const cookieStore = cookies();
+    const accessToken = (await cookieStore).get("access")?.value;
+
+    if (!accessToken) {
+      console.log("어세스토큰 없다");
+    }
+
     const response = await axios.post(
-      `${process.env.BASE_URL}/api/login`,
-      data
+      `${process.env.NEXT_PUBLIC_BASE_URL}api/vote/team/${teamId}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
     );
     return response.data;
   } catch (error) {

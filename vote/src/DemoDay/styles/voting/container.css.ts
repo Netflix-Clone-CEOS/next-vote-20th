@@ -49,5 +49,5 @@ export const buttonContainerstyle = style({
   width: "60rem",
   height: "fit-content",
 
-  gap: "0.2rem",
+  gap: "2rem",
 });
