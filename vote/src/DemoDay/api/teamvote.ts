@@ -17,7 +17,7 @@ export const teamvote = async ({ teamId }: { teamId: number }) => {
       {},
       {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `${accessToken}`,
         },
       }
     );

@@ -15,7 +15,7 @@ export const teamresult = async () => {
       `${process.env.NEXT_PUBLIC_BASE_URL}api/vote/team/result`,
       {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `${accessToken}`,
         },
       }
     );
