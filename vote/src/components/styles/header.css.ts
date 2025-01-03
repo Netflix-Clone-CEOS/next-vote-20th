@@ -7,3 +7,8 @@ export const headerContainer = style({
 
   width: "135rem",
 });
+
+export const logined_haeder = style({
+  display: "flex",
+  fontSize: "2rem",
+});
