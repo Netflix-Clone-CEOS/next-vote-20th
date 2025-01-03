@@ -16,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <HeaderIsOrNot />
-        <Providers>{children}</Providers>
+        <Providers>
+          <HeaderIsOrNot />
+          {children}
+        </Providers>
       </body>
     </html>
   );

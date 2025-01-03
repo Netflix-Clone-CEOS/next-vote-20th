@@ -4,10 +4,22 @@ export const containerStyle = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  flexDirection: "column",
 
   flexWrap: "wrap",
 
   gap: "2.7rem",
+});
+
+export const team_container = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexWrap: "wrap",
+
+  gap: "3rem",
+
+  width: "70%",
 });
 
 export const voteTypeContainerStyle = style({
@@ -49,5 +61,5 @@ export const buttonContainerstyle = style({
   width: "60rem",
   height: "fit-content",
 
-  gap: "0.2rem",
+  gap: "2rem",
 });

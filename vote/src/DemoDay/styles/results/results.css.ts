@@ -25,4 +25,6 @@ export const resultBtn = style({
 
   border: "3px solid #384084",
   backgroundColor: "#384084",
+
+  cursor: "pointer",
 });

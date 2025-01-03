@@ -1,16 +1,48 @@
+"use client";
+import { login } from "@/SigninLogin/api/login";
 import Button from "@/SigninLogin/components/Button";
 import Input from "@/SigninLogin/components/Input";
-import { LOGIN } from "@/SigninLogin/core/login";
 import { container } from "@/SigninLogin/styles/container.css";
-import React from "react";
+import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 export default function LoginInputs() {
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  const mutation = useMutation({
+    mutationFn: login,
+    onSuccess: async () => {
+      console.log("성공");
+      router.push("/");
+    },
+    onError: (error) => {
+      console.error(error);
+    },
+  });
+
+  const handleLogin = () => {
+    mutation.mutate({
+      userId: userId,
+      password: password,
+    });
+  };
+
   return (
     <div className={container}>
-      {LOGIN.map((item) => {
-        return <Input title={item} key={item} />;
-      })}
-      <Button text="로그인" />
+      <Input
+        text="로그인"
+        value={userId}
+        onChange={(e) => setUserId(e.target.value)}
+      />
+      <Input
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        text="비밀번호"
+      />
+      <Button onClick={handleLogin} text="로그인" />
     </div>
   );
 }
