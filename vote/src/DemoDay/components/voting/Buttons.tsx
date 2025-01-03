@@ -9,7 +9,7 @@ export default function Buttons({ onClick }: { onClick: () => void }) {
   const router = useRouter();
 
   function handleResult() {
-    router.push("/domoresult");
+    router.push("/demoresult");
   }
 
   return (

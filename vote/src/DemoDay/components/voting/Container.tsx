@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Teams from "./Teams";
-import { containerStyle } from "@/DemoDay/styles/voting/container.css";
+import {
+  containerStyle,
+  team_container,
+} from "@/DemoDay/styles/voting/container.css";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { teamlist } from "@/DemoDay/api/teamlist";
 import Buttons from "./Buttons";
@@ -44,21 +47,23 @@ export default function Container() {
 
   return (
     <div className={containerStyle}>
-      {isLoading && <p>loading...</p>}
-      {isError && <p>Error....</p>}
-      {data?.map((team) => {
-        const { teamName, description, teamId } = team;
-        return (
-          <Teams
-            clickedTeam={clickedTeam}
-            handleClickTeam={handleClickTeam}
-            key={teamId}
-            teamId={teamId}
-            teamName={teamName}
-            teamSummary={description}
-          />
-        );
-      })}
+      <div className={team_container}>
+        {isLoading && <p>loading...</p>}
+        {isError && <p>Error....</p>}
+        {data?.map((team) => {
+          const { teamName, description, teamId } = team;
+          return (
+            <Teams
+              clickedTeam={clickedTeam}
+              handleClickTeam={handleClickTeam}
+              key={teamId}
+              teamId={teamId}
+              teamName={teamName}
+              teamSummary={description}
+            />
+          );
+        })}
+      </div>
       <Buttons onClick={() => handleVoteTeam(clickedTeam)} />
     </div>
   );

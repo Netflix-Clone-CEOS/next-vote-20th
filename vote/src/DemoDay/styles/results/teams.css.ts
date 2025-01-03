@@ -1,18 +1,22 @@
+import { pretendardSemiBold } from "@/styles/font.css";
 import { style } from "@vanilla-extract/css";
 
-export const teams = style({
-  display: "flex",
-  justifyContent: "space-around",
-  alignItems: "center",
-  border: "3px solid #384084",
+export const teams = style([
+  pretendardSemiBold,
+  {
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    border: "3px solid #384084",
 
-  width: "50rem",
-  height: "8.5rem",
-  strokeWidth: "0.3rem",
-  color: "black",
-  gap: "3rem",
-  borderRadius: "20px",
-});
+    width: "80rem",
+    height: "8.5rem",
+    strokeWidth: "0.3rem",
+    color: "black",
+    gap: "3rem",
+    borderRadius: "20px",
+  },
+]);
 
 export const rank = style({
   display: "flex",
