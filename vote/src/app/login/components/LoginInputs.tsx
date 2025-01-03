@@ -4,18 +4,19 @@ import Button from "@/SigninLogin/components/Button";
 import Input from "@/SigninLogin/components/Input";
 import { container } from "@/SigninLogin/styles/container.css";
 import { useMutation } from "@tanstack/react-query";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 export default function LoginInputs() {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const mutation = useMutation({
     mutationFn: login,
     onSuccess: async () => {
       console.log("성공");
-      redirect("/");
+      router.push("/");
     },
     onError: (error) => {
       console.error(error);

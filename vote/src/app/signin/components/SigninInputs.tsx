@@ -10,6 +10,7 @@ import { TEAM_NAME } from "@/SigninLogin/core/team";
 import ButtonContent from "@/SigninLogin/components/ButtonContent";
 import { PART_LIST } from "@/SigninLogin/core/part";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 
 interface State {
   nameValue: string;
@@ -61,12 +62,13 @@ export default function SigninInputs() {
   const [state, dispatch] = useReducer(reducer, initalState);
   const [isTeam, setIsTeam] = useState(false);
   const [isPart, setIsPart] = useState(false);
+  const router = useRouter();
 
   const mutation = useMutation({
     mutationFn: signin,
     onSuccess: async () => {
       console.log("성공");
-      redirect("/login");
+      router.push("/login");
     },
     onError: (error) => {
       console.error(error);
