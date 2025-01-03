@@ -2,10 +2,11 @@
 import React from "react";
 import Buttons from "./Buttons";
 import Ceos from "@/components/Ceos";
-import { headerContainer } from "./styles/header.css";
+import { headerContainer, logined_container } from "./styles/header.css";
 import { useQuery } from "@tanstack/react-query";
 import { member } from "@/SigninLogin/api/member";
 import LoginedHeader from "./LoginedHeader";
+import Logout from "./Logout";
 
 export default function Header() {
   const { data } = useQuery({
@@ -16,7 +17,14 @@ export default function Header() {
   return (
     <header className={headerContainer}>
       <Ceos />
-      {data ? <LoginedHeader name={data.result.name} /> : <Buttons />}
+      {data ? (
+        <span className={logined_container}>
+          <LoginedHeader name={data.result.name} />
+          <Logout />
+        </span>
+      ) : (
+        <Buttons />
+      )}
     </header>
   );
 }
