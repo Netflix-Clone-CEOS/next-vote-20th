@@ -15,16 +15,21 @@ import {
 import Button from "@/PartLead/components/voting/Button";
 
 interface CandidateListProps {
-  list: Array<{ team: string; name: string }>;
+  list: Array<{ developerId: number; developerName: string; teamName: string }>;
 }
 
 export default function Container({ list }: CandidateListProps) {
   const [selectedCandidate, setSelectedCandidate] = useState<{
-    team: string;
-    name: string;
+    developerId: number;
+    developerName: string;
+    teamName: string;
   } | null>(null);
 
-  const handleCandidateClick = (candidate: { team: string; name: string }) => {
+  const handleCandidateClick = (candidate: {
+    developerId: number;
+    developerName: string;
+    teamName: string;
+  }) => {
     setSelectedCandidate(candidate);
   };
 
@@ -35,11 +40,11 @@ export default function Container({ list }: CandidateListProps) {
   return (
     <>
       <div className={candidateContainer}>
-        {list.map((candidate, index) => {
-          const { team, name } = candidate;
+        {list.map((candidate) => {
+          const { developerId, developerName, teamName } = candidate;
           return (
-            <div key={index} onClick={() => handleCandidateClick(candidate)}>
-              <Candidate team={team} name={name} />
+            <div key={developerId} onClick={() => handleCandidateClick(candidate)}>
+              <Candidate team={teamName} name={developerName} />
             </div>
           );
         })}
@@ -54,12 +59,12 @@ export default function Container({ list }: CandidateListProps) {
           >
             <Image
               src="/profile.svg"
-              alt={`${selectedCandidate.name}'s profile`}
+              alt={`${selectedCandidate.developerName}'s profile`}
               width={200}
               height={200}
             />
-            <h2 className={nameStyle}>{selectedCandidate.name}</h2>
-            <p className={teamNameStyle}>자기소개 들어갈 자리: {selectedCandidate.team}</p>
+            <h2 className={nameStyle}>{selectedCandidate.developerName}</h2>
+            <p className={teamNameStyle}>자기소개 들어갈 자리: {selectedCandidate.teamName}</p>
           <Button text='투표하기' variant='voting'/>
           </div>
         </div>
