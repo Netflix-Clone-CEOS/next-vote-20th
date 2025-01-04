@@ -3,7 +3,7 @@ import Candidate from "./Candidate";
 import { result, resultColumn } from "@/PartLead/styles/results/results.css";
 
 interface ResultsProps {
-  leadList: { team: string; name: string }[];
+  leadList: { count: number; developerName: string; teamName: string }[];
 }
 
 export default function Results({ leadList }: ResultsProps) {
@@ -19,8 +19,9 @@ export default function Results({ leadList }: ResultsProps) {
           <Candidate
             key={index}
             ranking={index + 1}
-            team={candidate.team}
-            name={candidate.name}
+            team={candidate.teamName}
+            name={candidate.developerName}
+            count={candidate.count}
           />
         ))}
       </div>
@@ -29,10 +30,11 @@ export default function Results({ leadList }: ResultsProps) {
       <div className={resultColumn}>
         {column2.map((candidate, index) => (
           <Candidate
-            key={index + columnCount}
-            ranking={index + columnCount + 1}
-            team={candidate.team}
-            name={candidate.name}
+            key={index}
+            ranking={columnCount + index + 1}
+            team={candidate.teamName}
+            name={candidate.developerName}
+            count={candidate.count}
           />
         ))}
       </div>
