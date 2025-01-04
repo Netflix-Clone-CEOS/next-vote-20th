@@ -25,11 +25,11 @@ export default function page() {
         <div className={voteTypeContainerStyle}>
         <div className={voteTypeWrapper}>
           <VoteType title='FRONT-END 파트장 투표' route="/feleadvote" />
-          <Button onClick={handleFrontResult} variant="result" key="결과보기" text="결과보기"/>
+          <Button onClick={handleFrontResult} variant="voting" key="결과보기" text="결과보기"/>
         </div>
         <div className={voteTypeWrapper}>
           <VoteType title='BACK-END 파트장 투표' route="/beleadvote"/>
-          <Button onClick={handleBackResult} variant="result" key="결과보기" text="결과보기"/>
+          <Button onClick={handleBackResult} variant="voting" key="결과보기" text="결과보기"/>
         </div>
         </div>
       </div>

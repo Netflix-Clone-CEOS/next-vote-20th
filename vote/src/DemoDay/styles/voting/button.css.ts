@@ -1,4 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css";
+import { pretendardSemi } from "@/styles/font.css";
 
 export const button = style({
   display: "flex",
@@ -13,6 +14,7 @@ export const button = style({
   height: "8.2rem",
 
   fontSize: "3rem",
+  fontFamily: pretendardSemi,
 });
 
 export const buttonVariants = styleVariants({
