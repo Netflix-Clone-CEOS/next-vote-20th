@@ -5,7 +5,6 @@ import Container from "@/PartLead/components/voting/CandidateContainer";
 import { title } from "@/DemoDay/styles/text.css";
 import { pageStyle } from "@/DemoDay/styles/voting/container.css";
 import { pretendardSemiBold } from "@/styles/font.css";
-import { FRONT_LIST } from '@/PartLead/core/frontlist';
 import React, { useEffect, useState } from "react";
 import { nomilist } from '@/PartLead/api/nomilist';
 

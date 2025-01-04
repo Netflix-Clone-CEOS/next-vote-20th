@@ -1,16 +1,34 @@
-import Buttons from "@/DemoDay/components/voting/Buttons";
+"use client"
+
+import Buttons from "@/PartLead/components/voting/Buttons";
 import Container from "@/PartLead/components/voting/CandidateContainer";
 import { title } from "@/DemoDay/styles/text.css";
 import { pageStyle } from "@/DemoDay/styles/voting/container.css";
 import { pretendardSemiBold } from "@/styles/font.css";
-import { BACK_LIST } from '@/PartLead/core/backlist';
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { nomilist } from '@/PartLead/api/nomilist';
 
 export default function page() {
+  const [backList, setBackList] = useState([]);
+
+  useEffect(() => {
+      const fetchBackList = async () => {
+        try {
+          const list = await nomilist("backend");
+          setBackList(list);
+          console.log(list);
+        } catch (error) {
+          console.error("backend list 불러오기 실패:", error);
+        }
+      };
+  
+      fetchBackList();
+    }, []);
+
   return (
     <div className={pageStyle}>
       <p className={`${title} ${pretendardSemiBold}`}>BE 파트장 투표</p>
-      <Container list={BACK_LIST}/>
+      <Container list={backList}/>
       <Buttons />
     </div>
   );
