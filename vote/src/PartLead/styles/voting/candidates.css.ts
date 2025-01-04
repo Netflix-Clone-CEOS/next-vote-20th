@@ -27,4 +27,5 @@ export const nameStyle = style({
 export const teamNameStyle = style({
   fontSize: "2rem",
   color: "black",
+  fontFamily: pretendardSemi,
 });
