@@ -11,9 +11,10 @@ interface candidateProp {
   ranking: number;
   team: string;
   name: string;
+  count: number;
 }
 export default function Candidate(props: candidateProp) {
-  const { ranking, team, name } = props;
+  const { ranking, team, name, count } = props;
 
   const dynamicCandidateStyle =
     ranking === 1
@@ -38,7 +39,7 @@ export default function Candidate(props: candidateProp) {
       <p className={candidateName}>{name}</p>
       <p className={teamName}>{team}</p>
       <p className={voted} style={dynamicVotedStyle}>
-        {ranking}
+        {count}
       </p>
     </div>
   );

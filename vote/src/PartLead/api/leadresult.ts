@@ -2,7 +2,7 @@
 import axios from "axios";
 import { cookies } from "next/headers";
 
-export const leadresult = async () => {
+export const leadresult = async ( type: string ) => {
   try {
     const cookieStore = cookies();
     const accessToken = (await cookieStore).get("access")?.value;
@@ -17,9 +17,11 @@ export const leadresult = async () => {
         headers: {
           Authorization: `${accessToken}`,
         },
+        params: { type },
       }
     );
-    return response.data;
+    console.log("fe 결과", response.data.result);
+    return response.data.result;
   } catch (error) {
     console.error(error);
   }
