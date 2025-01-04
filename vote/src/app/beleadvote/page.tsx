@@ -24,7 +24,7 @@ export default function Page() {
   
       fetchBackList();
     }, []);
-
+    
   return (
     <div className={pageStyle}>
       <p className={`${title} ${pretendardSemiBold}`}>BE 파트장 투표</p>

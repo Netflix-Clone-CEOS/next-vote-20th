@@ -5,7 +5,7 @@ import HeaderIsOrNot from "@/utils/HeaderIsOrNot";
 
 export const metadata: Metadata = {
   title: "CEOS 투표 서비스",
-  description: "엔브가 만들었어용",
+  description: "엔브가 만들었어용!",
 };
 
 export default function RootLayout({
