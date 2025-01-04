@@ -1,6 +1,6 @@
 "use client"
 
-import Buttons from "@/PartLead/components/voting/Buttons";
+import Button from "@/PartLead/components/results/Button";
 import Container from "@/PartLead/components/voting/CandidateContainer";
 import { title } from "@/DemoDay/styles/text.css";
 import { pageStyle } from "@/DemoDay/styles/voting/container.css";
@@ -29,7 +29,7 @@ export default function page() {
     <div className={pageStyle}>
       <p className={`${title} ${pretendardSemiBold}`}>BE 파트장 투표</p>
       <Container list={backList}/>
-      <Buttons />
+      <Button />
     </div>
   );
 }
