@@ -8,7 +8,7 @@ import { pretendardSemiBold } from "@/styles/font.css";
 import React, { useState, useEffect } from "react";
 import { leadresult } from '@/PartLead/api/leadresult';
 
-export default function page() {
+export default function Page() {
   const [leadResult, setLeadResult] = useState([]);
   
     useEffect(() => {

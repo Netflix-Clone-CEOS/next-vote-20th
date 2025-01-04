@@ -5,7 +5,7 @@ import { pageStyle } from "@/DemoDay/styles/voting/container.css";
 import { pretendardSemiBold } from "@/styles/font.css";
 import React from "react";
 
-export default function page() {
+export default function Page() {
   return (
     <div className={pageStyle}>
       <p className={`${title} ${pretendardSemiBold}`}>데모데이 투표 결과</p>

@@ -8,7 +8,7 @@ import { title } from "@/DemoDay/styles/text.css";
 import { pretendardSemiBold } from "@/styles/font.css";
 import React from "react";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
 
   function handleFrontResult() {

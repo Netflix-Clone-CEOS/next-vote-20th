@@ -8,7 +8,7 @@ import { pretendardSemiBold } from "@/styles/font.css";
 import React, { useEffect, useState } from "react";
 import { nomilist } from '@/PartLead/api/nomilist';
 
-export default function page() {
+export default function Page() {
   const [frontList, setFrontList] = useState([]);
 
   useEffect(() => {
