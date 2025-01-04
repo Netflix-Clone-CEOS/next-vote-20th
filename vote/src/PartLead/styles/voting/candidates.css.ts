@@ -16,16 +16,35 @@ export const candidates = style({
 
   flexDirection: "column",
   cursor: "pointer",
+  transition: "transform 0.3s ease, background-color 0.3s ease",
+
+  selectors: {
+    '&:hover': {
+      backgroundColor: "#384084",
+      transform: "scale(1.05)",
+    },
+  },
 });
 
 export const nameStyle = style({
   fontSize: "4.8rem",
   color: "black",
   fontFamily: pretendardSemi,
+
+  selectors: {
+      [`${candidates}:hover &`]: {
+        color: "#FFFFFF",
+      },
+  },
 });
 
 export const teamNameStyle = style({
   fontSize: "2rem",
   color: "black",
   fontFamily: pretendardSemi,
+  selectors: {
+    [`${candidates}:hover &`]: {
+      color: "#FFFFFF",
+    },
+  },
 });

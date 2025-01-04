@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { pretendardSemi } from "@/styles/font.css";
 
 export const candidate = style({
   display: "flex",
@@ -14,6 +15,7 @@ export const candidate = style({
   color: "black",
   gap: "3rem",
   borderRadius: "20px",
+  fontFamily: pretendardSemi,
 });
 
 export const rank = style({
@@ -39,6 +41,8 @@ export const candidateName = style({
 
 export const teamName = style({
   fontSize: "2rem",
+  width: "15rem",
+  textAlign: "center",
 });
 
 export const voted = style({
