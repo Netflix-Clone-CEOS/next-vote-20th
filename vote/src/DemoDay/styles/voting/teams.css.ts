@@ -16,9 +16,13 @@ export const teams = style({
 
   cursor: "pointer",
 
-  ":hover": {
-    backgroundColor: "#384084",
-    color: "white",
+  transition: "transform 0.3s ease, background-color 0.3s ease",
+
+  selectors: {
+    "&:hover": {
+      backgroundColor: "#384084",
+      transform: "scale(1.05)",
+    },
   },
 });
 
@@ -37,16 +41,34 @@ export const clicked_teams = style({
 
   cursor: "pointer",
   backgroundColor: "#384084",
-  color: "#ffffff",
 });
 
 export const teamNameStyle = style({
   fontSize: "4.8rem",
   color: "black",
   fontFamily: pretendardSemi,
+
+  selectors: {
+    [`${teams}:hover &`]: {
+      color: "#FFFFFF",
+    },
+    [`${clicked_teams} &`]: {
+      color: "#FFFFFF",
+    },
+  },
 });
 
 export const teamSummaryStyle = style({
   fontSize: "2rem",
   color: "black",
+  fontFamily: pretendardSemi,
+
+  selectors: {
+    [`${teams}:hover &`]: {
+      color: "#FFFFFF",
+    },
+    [`${clicked_teams} &`]: {
+      color: "#FFFFFF",
+    },
+  },
 });
