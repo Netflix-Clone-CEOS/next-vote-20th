@@ -14,12 +14,16 @@ import {
 } from "@/PartLead/styles/voting/candidates.css";
 import Button from "@/PartLead/components/voting/Button";
 import { leaddetail } from '@/PartLead/api/leaddetail';
+import { leadvote } from "@/PartLead/api/leadvote";
+import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 
 interface CandidateListProps {
   list: Array<{ developerId: number; developerName: string; teamName: string }>;
+  redirectPath: string;
 }
 
-export default function Container({ list }: CandidateListProps) {
+export default function Container({ list, redirectPath }: CandidateListProps) {
 
   const [selectedCandidate, setSelectedCandidate] = useState<{
     developerId: number;
@@ -28,6 +32,7 @@ export default function Container({ list }: CandidateListProps) {
   } | null>(null);
 
   const [introduction, setIntroduction] = useState<string>("");
+  const router = useRouter();
 
   useEffect(() => {
     const fetchDetail = async () => {
@@ -54,6 +59,23 @@ export default function Container({ list }: CandidateListProps) {
 
   const closeModal = () => {
     setSelectedCandidate(null);
+    setIntroduction("");
+  };
+
+  const mutation = useMutation({
+    mutationFn: leadvote,
+    onSuccess: () => {
+      console.log("파트장 투표 성공");
+      router.push(redirectPath);
+    },
+    onError: (error) => {
+      console.error("파트장 투표 실패:", error);
+    },
+  });
+
+  const handleVote = () => {
+    if (!selectedCandidate) return;
+    mutation.mutate({ memberId: selectedCandidate.developerId });
   };
 
   return (
@@ -84,7 +106,7 @@ export default function Container({ list }: CandidateListProps) {
             />
             <h2 className={nameStyle}>{selectedCandidate.developerName}</h2>
             <p className={teamNameStyle}>{introduction}</p>
-          <Button text='투표하기' variant='voting'/>
+          <Button text='투표하기' variant='voting' onClick={handleVote}/>
           </div>
         </div>
       )}

@@ -28,7 +28,7 @@ export default function page() {
   return (
     <div className={pageStyle}>
       <p className={`${title} ${pretendardSemiBold}`}>BE 파트장 투표</p>
-      <Container list={backList}/>
+      <Container list={backList} redirectPath="/beleadresult"/>
       <Button />
     </div>
   );
